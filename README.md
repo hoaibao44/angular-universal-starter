@@ -50,3 +50,4 @@ npm run start
 - [x] PurgeCSS as unused CSS remover
 - [x] Compression
 - [x] Angular Universal basic walk-through
+- [x] Support `nixpacks` deploy for `railway.app`
