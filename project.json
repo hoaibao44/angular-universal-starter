@@ -1,5 +1,5 @@
 {
-  "name": "angular-universal-starter",
+  "name": "ggj-aff-fe",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "generators": {
@@ -13,7 +13,7 @@
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "options": {
-        "outputPath": "dist/apps/angular-universal-starter/browser",
+        "outputPath": "dist/apps/ggj-aff-fe/browser",
         "index": "src/index.html",
         "main": "src/main.ts",
         "polyfills": [
@@ -26,7 +26,8 @@
           "src/assets"
         ],
         "styles": [
-          "src/styles.scss"
+          "src/styles.css",
+          "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
         ],
         "scripts": []
       },
@@ -35,8 +36,8 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "2mb",
+              "maximumError": "10mb"
             },
             {
               "type": "anyComponentStyle",
@@ -64,10 +65,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "angular-universal-starter:build:production"
+          "browserTarget": "ggj-aff-fe:build:production"
         },
         "development": {
-          "browserTarget": "angular-universal-starter:build:development"
+          "browserTarget": "ggj-aff-fe:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,7 +76,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "angular-universal-starter:build"
+        "browserTarget": "ggj-aff-fe:build"
       }
     },
     "test": {
@@ -92,7 +93,7 @@
           "src/assets"
         ],
         "styles": [
-          "src/styles.scss"
+          "src/styles.css"
         ],
         "scripts": []
       }
@@ -104,7 +105,7 @@
       "executor": "@angular-devkit/build-angular:server",
       "options": {
         "optimization": true,
-        "outputPath": "dist/apps/angular-universal-starter/server",
+        "outputPath": "dist/apps/ggj-aff-fe/server",
         "main": "server.ts",
         "tsConfig": "tsconfig.server.json"
       },
@@ -130,12 +131,12 @@
       "executor": "@nguniversal/builders:ssr-dev-server",
       "configurations": {
         "development": {
-          "browserTarget": "angular-universal-starter:build:development",
-          "serverTarget": "angular-universal-starter:server:development"
+          "browserTarget": "ggj-aff-fe:build:development",
+          "serverTarget": "ggj-aff-fe:server:development"
         },
         "production": {
-          "browserTarget": "angular-universal-starter:build:production",
-          "serverTarget": "angular-universal-starter:server:production"
+          "browserTarget": "ggj-aff-fe:build:production",
+          "serverTarget": "ggj-aff-fe:server:production"
         }
       },
       "defaultConfiguration": "development"
@@ -149,12 +150,12 @@
       },
       "configurations": {
         "development": {
-          "browserTarget": "angular-universal-starter:build:development",
-          "serverTarget": "angular-universal-starter:server:development"
+          "browserTarget": "ggj-aff-fe:build:development",
+          "serverTarget": "ggj-aff-fe:server:development"
         },
         "production": {
-          "browserTarget": "angular-universal-starter:build:production",
-          "serverTarget": "angular-universal-starter:server:production"
+          "browserTarget": "ggj-aff-fe:build:production",
+          "serverTarget": "ggj-aff-fe:server:production"
         }
       },
       "defaultConfiguration": "production"

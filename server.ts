@@ -15,7 +15,7 @@ const morgan = require('morgan');
 
 
 
-const distFolder = path.join(process.cwd(), 'dist/apps/angular-universal-starter/browser');
+const distFolder = path.join(process.cwd(), 'dist/apps/ggj-aff-fe/browser');
 const template = fs.readFileSync(path.join(distFolder, 'index.html')).toString();
 const win = domino.createWindow(template.toString());
 
@@ -52,7 +52,7 @@ export function app(): express.Express {
   server.use(compression());
   server.use(morgan('common'));
 
-  const distFolder = join(process.cwd(), 'dist/apps/angular-universal-starter/browser');
+  const distFolder = join(process.cwd(), 'dist/apps/ggj-aff-fe/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
   
   isbot.extend(['Mozilla/5.0 (compatible; vkShare; +http://vk.com/dev/Share)', 'PostmanRuntime/7.25.0']);

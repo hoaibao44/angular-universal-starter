@@ -1,2 +1,16 @@
-<p>Home Page works!</p>
-<a [routerLink]="['/about']" routerLinkActive="router-link-active">To About Page</a>
+<nz-breadcrumb>
+    <nz-breadcrumb-item>
+        <span nz-icon nzType="home" [routerLink]="['/']" routerLinkActive="router-link-active"></span>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+        <a>
+            <span nz-icon nzType="user"></span>
+            <span>Application List</span>
+        </a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Application</nz-breadcrumb-item>
+</nz-breadcrumb>
+<div>
+    <p nz-typography nzType="success">HomePage works!</p>
+    <button [routerLink]="['/about']" routerLinkActive="router-link-active" nz-button nzType="primary">About >></button>
+</div>
