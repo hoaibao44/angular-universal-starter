@@ -51,3 +51,4 @@ npm run start
 - [x] Compression
 - [x] Angular Universal basic walk-through
 - [x] Support `nixpacks` deploy for `railway.app`
+- [x] Add `ng-zorro` 
