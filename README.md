@@ -28,12 +28,17 @@ Using https://ng.ant.design/docs/introduce/en for styling, so not yet supported 
 
 
 ## Run CLI
+- First thing first >> Install dependencies
+```
+npm i
+```
+
 - Run dev >> Serve App as SPA: 
 ```
 nx run angular-universal-starter:serve:development
 ```
 
-- Test server run: serve as SPA if NOT Bot, serve as SSR if Bot
+- Test server: serve as SPA if NOT Bot, serve as SSR if Bot
 ```
 npm run build
 npm run start
