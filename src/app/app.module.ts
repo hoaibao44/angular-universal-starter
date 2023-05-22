@@ -14,7 +14,7 @@ import { AboutPage } from './about/about.page';
     AboutPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
   providers: [],

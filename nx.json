@@ -5,7 +5,8 @@
       "options": {
         "cacheableOperations": [
           "build",
-          "test"
+          "test",
+          "server"
         ],
         "accessToken": "Mzk1MjVhZWEtYTVmNi00MGRhLWIwYzMtNmY0YzVhZTAwZTI1fHJlYWQtd3JpdGU="
       }

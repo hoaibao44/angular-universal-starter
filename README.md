@@ -28,5 +28,20 @@ Using https://ng.ant.design/docs/introduce/en for styling, so not yet supported 
 
 
 ## Run CLI
-- Run dev >> Serve App as SPA >> `nx run angular-universal-starter:serve:development`
+- Run dev >> Serve App as SPA: 
+```
+nx run angular-universal-starter:serve:development
+```
 
+- Test server run: serve as SPA if NOT Bot, serve as SSR if Bot
+```
+npm run build
+npm run start
+```
+
+## Included
+
+- [x] Morgan as Logger
+- [x] PurgeCSS as unused CSS remover
+- [x] Compression
+- [x] Angular Universal basic walk-through

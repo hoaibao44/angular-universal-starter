@@ -1,6 +1,6 @@
 {
-  "$schema": "node_modules/nx/schemas/project-schema.json",
   "name": "angular-universal-starter",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "generators": {
     "@schematics/angular:component": {
@@ -13,7 +13,7 @@
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "options": {
-        "outputPath": "dist/angular-universal-starter",
+        "outputPath": "dist/apps/angular-universal-starter/browser",
         "index": "src/index.html",
         "main": "src/main.ts",
         "polyfills": [
@@ -96,6 +96,68 @@
         ],
         "scripts": []
       }
+    },
+    "server": {
+      "dependsOn": [
+        "build"
+      ],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "optimization": true,
+        "outputPath": "dist/apps/angular-universal-starter/server",
+        "main": "server.ts",
+        "tsConfig": "tsconfig.server.json"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "angular-universal-starter:build:development",
+          "serverTarget": "angular-universal-starter:server:development"
+        },
+        "production": {
+          "browserTarget": "angular-universal-starter:build:production",
+          "serverTarget": "angular-universal-starter:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": [
+          "/"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "angular-universal-starter:build:development",
+          "serverTarget": "angular-universal-starter:server:development"
+        },
+        "production": {
+          "browserTarget": "angular-universal-starter:build:production",
+          "serverTarget": "angular-universal-starter:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   }
 }
